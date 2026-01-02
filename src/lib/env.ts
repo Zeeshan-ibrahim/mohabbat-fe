@@ -8,7 +8,10 @@
  */
 export function getEnv(key: string, defaultValue?: string): string {
   const value = process.env[key];
-  if (!value && !defaultValue) {
+  console.log("value", value);
+  console.log("defaultValue", defaultValue);
+  if (!value) {
+    if (defaultValue) return defaultValue;
     throw new Error(`Missing required environment variable: ${key}`);
   }
   return value || defaultValue || "";
@@ -45,7 +48,7 @@ export function getEnvNumber(key: string, defaultValue?: number): number {
  */
 export const env = {
   // API Configuration
-  apiUrl: getEnv("NEXT_PUBLIC_API_URL", ""),
+  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "http://localhost:3000/api"),
   apiTimeout: getEnvNumber("NEXT_PUBLIC_API_TIMEOUT", 30000),
 
   // Application
@@ -65,8 +68,8 @@ export const env = {
   enableAnalytics: getEnvBoolean("NEXT_PUBLIC_ENABLE_ANALYTICS", false),
 
   // Third-Party Services
-  gaId: getEnv("NEXT_PUBLIC_GA_ID", ""),
-  stripePublishableKey: getEnv("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY", ""),
+  // gaId: getEnv("NEXT_PUBLIC_GA_ID", ""),
+  // stripePublishableKey: getEnv("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY", ""),
 
   // File Upload
   maxFileSize: getEnvNumber("NEXT_PUBLIC_MAX_FILE_SIZE", 5242880), // 5MB
