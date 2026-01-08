@@ -8,8 +8,6 @@
  */
 export function getEnv(key: string, defaultValue?: string): string {
   const value = process.env[key];
-  console.log("value", value);
-  console.log("defaultValue", defaultValue);
   if (!value) {
     if (defaultValue) return defaultValue;
     throw new Error(`Missing required environment variable: ${key}`);
