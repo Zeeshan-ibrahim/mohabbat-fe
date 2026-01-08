@@ -1,6 +1,6 @@
 import { Navbar } from "./navbar";
 
-export const ComingSoonPage = () => {
+export default function ComingSoonPage () {
   return (
     <div className="relative min-h-screen overflow-hidden">
       
