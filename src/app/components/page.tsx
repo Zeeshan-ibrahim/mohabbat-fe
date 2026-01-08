@@ -27,8 +27,8 @@ export const ComingSoonPage = () => {
         {/* Content */}
         <div
           className="
-            flex flex-col items-center justify-center flex-1
-            text-white px-6 text-center gap-6
+            flex flex-col justify-center flex-1
+            text-white px-6 gap-6
             lg:items-start lg:text-left lg:px-0
             lg:ml-20 lg:mt-20
           "
@@ -50,7 +50,7 @@ export const ComingSoonPage = () => {
               lg:text-2xl
             "
           >
-            A modern clothing label inspired by ancient narratives
+            A modern clothing label inspired by ancient narratives.
           </p>
 
           {/* Email Input */}
@@ -85,7 +85,7 @@ export const ComingSoonPage = () => {
         <img
           src="/coming-soon.svg"
           alt=""
-          className="w-full max-w-xs mx-auto mb-6 lg:max-w-none lg:mx-0"
+          className="w-full max-w-none mx-auto lg:mx-0"
         />
       </div>
     </div>
