@@ -50,7 +50,7 @@ export const ComingSoonPage = () => {
               lg:text-2xl
             "
           >
-            A modern clothing label inspired by ancient narratives.
+            A modern clothing label inspired by ancient narratives
           </p>
 
           {/* Email Input */}
