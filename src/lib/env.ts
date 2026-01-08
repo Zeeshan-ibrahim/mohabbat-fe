@@ -9,6 +9,7 @@
 
 export function getEnv(key: string, defaultValue?: string): string {
   const value = process.env[key];
+  console.log("key", key, "value", value, "default",defaultValue)
   if (!value) {
     if (defaultValue) return defaultValue;
     throw new Error(`Missing required environment variable: ${key}`);
@@ -47,7 +48,7 @@ export function getEnvNumber(key: string, defaultValue?: number): number {
  */
 export const env = {
   // API Configuration
-  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "http://localhost:3000/api"),
+  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "https://mohabbat-be.vercel.app/"),
   apiTimeout: getEnvNumber("NEXT_PUBLIC_API_TIMEOUT", 30000),
 
   // Application
