@@ -96,6 +96,6 @@ export const env = {
   isProduction: process.env.NODE_ENV === "production",
   isDevelopment: process.env.NODE_ENV === "development",
 
-  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'http://localhost:3005') 
+  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'https://mohabbat-be.vercel.app/') 
 } as const;
 
