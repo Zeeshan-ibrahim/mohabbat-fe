@@ -6,6 +6,7 @@
 /**
  * Get environment variable with optional default value
  */
+
 export function getEnv(key: string, defaultValue?: string): string {
   const value = process.env[key];
   if (!value) {
@@ -93,5 +94,7 @@ export const env = {
   // Check if running in production
   isProduction: process.env.NODE_ENV === "production",
   isDevelopment: process.env.NODE_ENV === "development",
+
+  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'http://localhost:3005') 
 } as const;
 
