@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-export function HomePage() {
+export default function HomePage() {
   return (
     <div className="">
       <main className="flex min-h-screen w-full flex-col items-center justify-between py-8 px-8 bg-white dark:bg-black sm:items-start">
