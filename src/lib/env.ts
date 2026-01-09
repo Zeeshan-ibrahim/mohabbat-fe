@@ -49,43 +49,36 @@ export function getEnvNumber(key: string, defaultValue?: number): number {
  */
 export const env = {
   // API Configuration
-  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "https://node-mc.vercel.app"),
+  apiUrl: process.env.NEXT_PUBLIC_API_URL ?? "test",
   apiTimeout: getEnvNumber("NEXT_PUBLIC_API_TIMEOUT", 30000),
 
   // Application
-  appName: getEnv("NEXT_PUBLIC_APP_NAME", "Mohabbat"),
-  appEnv: getEnv("NEXT_PUBLIC_APP_ENV", "development"),
-  appVersion: getEnv("NEXT_PUBLIC_APP_VERSION", "1.0.0"),
-  nodeEnv: getEnv("NODE_ENV", "development"),
+  appName: process.env.NEXT_PUBLIC_APP_NAME ?? "Mohabbat",
+  appEnv: process.env.NEXT_PUBLIC_APP_ENV ?? "development",
+  appVersion: process.env.NEXT_PUBLIC_APP_VERSION ?? "1.0.0",
+  nodeEnv: process.env.NODE_ENV ?? "development",
 
   // Authentication
-  tokenStorageKey: getEnv("NEXT_PUBLIC_TOKEN_STORAGE_KEY", "token"),
-  sessionTimeout: getEnvNumber("NEXT_PUBLIC_SESSION_TIMEOUT", 30),
-  enableAuth: getEnvBoolean("NEXT_PUBLIC_ENABLE_AUTH", true),
+  tokenStorageKey: process.env.NEXT_PUBLIC_TOKEN_STORAGE_KEY ?? "token",
+  sessionTimeout: process.env.NEXT_PUBLIC_SESSION_TIMEOUT ?? 30,
+  enableAuth: process.env.NEXT_PUBLIC_ENABLE_AUTH ?? true,
 
   // Feature Flags
-  enableRegistration: getEnvBoolean("NEXT_PUBLIC_ENABLE_REGISTRATION", true),
-  enableDarkMode: getEnvBoolean("NEXT_PUBLIC_ENABLE_DARK_MODE", true),
-  enableAnalytics: getEnvBoolean("NEXT_PUBLIC_ENABLE_ANALYTICS", false),
-
-  // Third-Party Services
-  // gaId: getEnv("NEXT_PUBLIC_GA_ID", ""),
-  // stripePublishableKey: getEnv("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY", ""),
+  enableRegistration: process.env.NEXT_PUBLIC_ENABLE_REGISTRATION ?? true,
+  enableDarkMode: process.env.NEXT_PUBLIC_ENABLE_DARK_MODE ?? true,
+  enableAnalytics: process.env.NEXT_PUBLIC_ENABLE_ANALYTICS ?? false,
 
   // File Upload
-  maxFileSize: getEnvNumber("NEXT_PUBLIC_MAX_FILE_SIZE", 5242880), // 5MB
-  allowedFileTypes: getEnv(
-    "NEXT_PUBLIC_ALLOWED_FILE_TYPES",
-    "image/jpeg,image/png,image/gif,application/pdf"
-  ).split(","),
+  maxFileSize: process.env.NEXT_PUBLIC_MAX_FILE_SIZE ?? 5242880, // 5MB
+  allowedFileTypes: process.env.NEXT_PUBLIC_ALLOWED_FILE_TYPES ?? "image/jpeg,image/png,image/gif,application/pdf",
 
   // Pagination
-  itemsPerPage: getEnvNumber("NEXT_PUBLIC_ITEMS_PER_PAGE", 10),
-  maxItemsPerPage: getEnvNumber("NEXT_PUBLIC_MAX_ITEMS_PER_PAGE", 100),
+  itemsPerPage: process.env.NEXT_PUBLIC_ITEMS_PER_PAGE ?? 10,
+  maxItemsPerPage: process.env.NEXT_PUBLIC_MAX_ITEMS_PER_PAGE ?? 100,
 
   // UI
-  defaultTheme: getEnv("NEXT_PUBLIC_DEFAULT_THEME", "light") as "light" | "dark" | "system",
-  debug: getEnvBoolean("NEXT_PUBLIC_DEBUG", false),
+  defaultTheme: process.env.NEXT_PUBLIC_DEFAULT_THEME ?? "light" as "light" | "dark" | "system",
+  debug: process.env.NEXT_PUBLIC_DEBUG ?? false,
 
   // Development
   enableReactQueryDevtools: getEnvBoolean(
@@ -97,6 +90,6 @@ export const env = {
   isProduction: process.env.NODE_ENV === "production",
   isDevelopment: process.env.NODE_ENV === "development",
 
-  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'https://node-mc.vercel.app') 
+  baseURL: process.env.NEXT_PUBLIC_NODE_URL ?? 'test' 
 } as const;
 
