@@ -55,7 +55,7 @@ export default function ComingSoonPage() {
         autoPlay
         preload="auto"
         poster="/bg-image.png"
-        className="absolute inset-0 w-full h-full object-cover -z-10"
+        className="absolute inset-0 w-full h-full object-cover object-right lg:object-center -z-10"
       >
         <source src="/videos/coming-soon.mp4" type="video/mp4" />
         <source src="/videos/background.webm" type="video/webm" />
@@ -71,11 +71,13 @@ export default function ComingSoonPage() {
         <div className="flex flex-col justify-center flex-1 text-white px-6 gap-6 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
           <img src="/Logo.svg" alt="Logo" className="w-40 lg:w-auto" />
 
-          <h1 className="text-3xl font-libre italic leading-snug lg:text-6xl">
-            Dresses Shaped By Forgotten Stories.
+          <h1 className="text-2xl font-libre italic leading-snug lg:text-5xl">
+            Dresses Shaped By
+            <br />
+            Forgotten Stories.
           </h1>
 
-          <p className="text-base opacity-90 lg:text-2xl">
+          <p className="text-base opacity-90 lg:text-lg">
             A modern clothing label inspired by ancient narratives.
           </p>
 
