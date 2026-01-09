@@ -36,7 +36,6 @@ export default function RegisterPage() {
     phone: "",
     address: "",
   });
-  console.log(env.baseURL);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const registerMutation = useRegister();
 
