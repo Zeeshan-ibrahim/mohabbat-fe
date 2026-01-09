@@ -10,6 +10,7 @@
 export function getEnv(key: string, defaultValue?: string): string {
   const value = process.env[key];
   console.log("key", key, "value", value, "default",defaultValue)
+  console.log("NEXT_PUBLIC_NODE_URL:", process.env.NEXT_PUBLIC_NODE_URL);
   if (!value) {
     if (defaultValue) return defaultValue;
     throw new Error(`Missing required environment variable: ${key}`);
