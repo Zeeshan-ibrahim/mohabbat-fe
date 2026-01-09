@@ -5,7 +5,7 @@
 export const env = {
   // API Configuration
   apiUrl: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3000",
-  apiTimeout: process.env.NEXT_PUBLIC_API_TIMEOUT ?? 30000,
+  apiTimeout: parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT ?? '30000'),
 
   // Application
   appName: process.env.NEXT_PUBLIC_APP_NAME ?? "Mohabbat",
