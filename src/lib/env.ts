@@ -48,7 +48,7 @@ export function getEnvNumber(key: string, defaultValue?: number): number {
  */
 export const env = {
   // API Configuration
-  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "https://mohabbat-be.vercel.app"),
+  apiUrl: getEnv("NEXT_PUBLIC_API_URL", "https://node-mc.vercel.app"),
   apiTimeout: getEnvNumber("NEXT_PUBLIC_API_TIMEOUT", 30000),
 
   // Application
@@ -96,6 +96,6 @@ export const env = {
   isProduction: process.env.NODE_ENV === "production",
   isDevelopment: process.env.NODE_ENV === "development",
 
-  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'https://mohabbat-be.vercel.app') 
+  baseURL: getEnv("NEXT_PUBLIC_NODE_URL",'https://node-mc.vercel.app') 
 } as const;
 

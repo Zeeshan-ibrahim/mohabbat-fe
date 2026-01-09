@@ -25,7 +25,7 @@ const registerEmail = async (
   payload: RegisterEmailPayload
 ): Promise<RegisterEmailResponse> => {
   const { data } = await axios.post<RegisterEmailResponse>(
-    `${env.baseURL}/api/register-email`,
+    `${env.baseURL}/register-email`,
     payload
   );
   return data;
