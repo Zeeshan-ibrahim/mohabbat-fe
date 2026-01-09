@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState } from "react";
 import { Navbar } from "./navbar";
 import { z } from "zod";
@@ -32,7 +32,6 @@ export default function ComingSoonPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
 
     // Validate email
     emailSchema.safeParse(email);
@@ -62,8 +61,8 @@ export default function ComingSoonPage() {
         <source src="/videos/background.webm" type="video/webm" />
       </video>
 
-      {/* Mobile fallback background */}
-      <div className="absolute inset-0 bg-black lg:bg-black/40 -z-10" />
+      {/* Mobile fallback background (transparent on small screens so poster/video shows) */}
+      <div className="absolute inset-0 bg-black/40 -z-10" />
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -89,7 +88,10 @@ export default function ComingSoonPage() {
             </div>
           ) : (
             /* Email Form */
-            <form className="mt-6 w-full max-w-md lg:max-w-xl" onSubmit={handleSubmit}>
+            <form
+              className="mt-6 w-full max-w-md lg:max-w-xl"
+              onSubmit={handleSubmit}
+            >
               <div className="relative">
                 <input
                   type="email"
@@ -110,7 +112,6 @@ export default function ComingSoonPage() {
                   {isPending ? "SENDING..." : "SEND"}
                 </button>
               </div>
-
             </form>
           )}
         </div>
