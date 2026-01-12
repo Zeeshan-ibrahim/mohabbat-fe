@@ -57,19 +57,23 @@ export default function ComingSoonPage() {
         poster="/bg-image.png"
         className="absolute inset-0 w-full h-full object-cover object-right lg:object-center -z-10"
       >
-        <source src="/videos/coming-soon.mp4" type="video/mp4" />
-        <source src="/videos/background.webm" type="video/webm" />
+        <source src="/videos/coming-soon.mp4" type="video/mp4" media="(min-width: 767px)" />
+        <source
+          src="/videos/mob-video.webm"
+          type="video/mp4"
+          media="(max-width: 767px)"
+        />
       </video>
 
       {/* Mobile fallback background (transparent on small screens so poster/video shows) */}
-      <div className="absolute inset-0 bg-black/40 -z-10" />
+      <div className="absolute inset-0 bg-black/40 -z-10" /> 
 
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
         {/* Content */}
-        <div className="flex flex-col justify-center flex-1 text-white px-6 gap-6 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
-          <img src="/Logo.svg" alt="Logo" className="w-40 lg:w-auto" />
+        <div className="flex flex-col justify-center flex-1 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
+          <img src="/Logo.svg" alt="Logo" className="w-28" />
 
           <h1 className="text-2xl font-libre italic leading-snug lg:text-5xl">
             Dresses Shaped By
@@ -122,7 +126,7 @@ export default function ComingSoonPage() {
         <img
           src="/coming-soon.svg"
           alt=""
-          className="w-full max-w-none mx-auto lg:mx-0"
+          className="w-full lg:mx-0 mt-8"
         />
       </div>
     </div>
