@@ -46,7 +46,7 @@ export default function ComingSoonPage() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative h-screen overflow-hidden">
       {/* Background Video */}
       <video
         muted
@@ -68,11 +68,11 @@ export default function ComingSoonPage() {
       {/* Mobile fallback background (transparent on small screens so poster/video shows) */}
       <div className="absolute inset-0 bg-black/40 -z-10" /> 
 
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col h-screen">
         <Navbar />
 
         {/* Content */}
-        <div className="flex flex-col justify-center flex-1 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
+        <div className="flex flex-col justify-center flex-1 min-h-0 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
           <img src="/Logo.svg" alt="Logo" className="w-28" />
 
           <h1 className="text-2xl font-libre italic leading-snug lg:text-5xl">
@@ -126,7 +126,7 @@ export default function ComingSoonPage() {
         <img
           src="/coming-soon.svg"
           alt=""
-          className="w-full lg:mx-0 mt-8"
+          className="w-full lg:mx-0 flex-shrink-0"
         />
       </div>
     </div>
