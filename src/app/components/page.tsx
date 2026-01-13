@@ -121,7 +121,6 @@ export default function ComingSoonPage() {
           )}
         </div>
 
-        /* Bottom Illustration
         <img
           src="/coming-soon.svg"
           alt=""
