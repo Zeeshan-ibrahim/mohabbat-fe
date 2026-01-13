@@ -54,25 +54,24 @@ export default function ComingSoonPage() {
         loop
         autoPlay
         preload="auto"
-        poster="/bg-image.png"
-        className="absolute inset-0 w-full h-full object-cover object-right lg:object-center -z-10"
+        className="absolute w-full h-full object-cover object-bottom lg:object-right lg:object-center -z-10"
       >
-        <source src="/videos/coming-soon.mp4" type="video/mp4" media="(min-width: 767px)" />
+        <source src="/videos/coming-soon.mp4" type="video/mp4" media="(min-width: 1024px)" />
         <source
           src="/videos/mob-video.webm"
           type="video/mp4"
-          media="(max-width: 767px)"
+          media="(max-width: 1024px)"
         />
       </video>
 
-      {/* Mobile fallback background (transparent on small screens so poster/video shows) */}
-      <div className="absolute inset-0 bg-black/40 -z-10" /> 
-
+      {/* Blue gradient overlay from left to right */}
+      <div className="absolute inset-y-0 left-0 w-2/3 bg-gradient-to-r from-[#02132c] to-transparent -z-10" />
+  
       <div className="flex flex-col h-screen">
         <Navbar />
 
-        {/* Content */}
-        <div className="flex flex-col justify-center flex-1 min-h-0 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
+        {/* Content  */}
+        <div className="flex flex-col justify-center flex-1  min-h-0 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
           <img src="/Logo.svg" alt="Logo" className="w-28" />
 
           <h1 className="text-2xl font-libre italic leading-snug lg:text-5xl">
@@ -93,7 +92,7 @@ export default function ComingSoonPage() {
               </div>
             </div>
           ) : (
-            /* Email Form */
+           
             <form
               className="mt-6 w-full max-w-md lg:max-w-xl"
               onSubmit={handleSubmit}
@@ -113,7 +112,7 @@ export default function ComingSoonPage() {
                 <button
                   type="submit"
                   disabled={isPending || !email}
-                  className="absolute right-0 bottom-0 px-4 py-2 border border-white text-white text-xs tracking-widest hover:bg-white hover:text-black transition lg:px-6 lg:py-3 lg:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="absolute right-0 bottom-0 px-4 py-2 border border-white text-white text-sm tracking-widest hover:bg-white hover:text-black transition lg:py-3 lg:text-sm disabled:cursor-not-allowed"
                 >
                   {isPending ? "SENDING..." : "SEND"}
                 </button>
@@ -122,13 +121,13 @@ export default function ComingSoonPage() {
           )}
         </div>
 
-        {/* Bottom Illustration */}
+        /* Bottom Illustration
         <img
           src="/coming-soon.svg"
           alt=""
           className="w-full lg:mx-0 flex-shrink-0"
         />
-      </div>
+      </div> 
     </div>
   );
 }
