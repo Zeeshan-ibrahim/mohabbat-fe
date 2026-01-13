@@ -65,7 +65,7 @@ export default function ComingSoonPage() {
       </video>
 
       {/* Blue gradient overlay - bottom to top on mobile, left to right on desktop */}
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#02132c] to-transparent lg:inset-y-0 lg:left-0 lg:w-2/3 lg:h-full lg:bg-gradient-to-r -z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#02132c] to-transparent lg:inset-y-0 lg:left-0 lg:w-2/3 lg:h-full lg:bg-gradient-to-r -z-10" />
   
       <div className="flex flex-col h-screen">
         <Navbar />
