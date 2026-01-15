@@ -4,7 +4,6 @@ import { Navbar } from "./navbar";
 import { z } from "zod";
 import { useRegisterUserEmail } from "@/dal/coming-soon/cs.services";
 
-// Move schema outside component to avoid recreation on each render
 const emailSchema = z
   .string()
   .min(1, { message: "Email is required" })
@@ -33,10 +32,7 @@ export default function ComingSoonPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate email
     emailSchema.safeParse(email);
-
-    // Submit email
     mutate({ email });
   };
 
@@ -47,28 +43,19 @@ export default function ComingSoonPage() {
 
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Background Video */}
-      <video
-        muted
-        playsInline
-        loop
-        autoPlay
-        preload="auto"
-        className="absolute w-full h-full object-cover object-bottom lg:object-right lg:object-center -z-10"
-      >
-        <source src="/videos/coming-soon.mp4" type="video/mp4" media="(min-width: 1024px)" />
-        <source
-          src="/videos/mob-video.webm"
-          type="video/mp4"
-          media="(max-width: 1024px)"
+      {/* Background Image */}
+      <picture className="absolute inset-0 -z-10 block h-full w-full">
+        <source srcSet="/web-bg.png" media="(min-width: 800px)" />
+        <img
+          src="/mobile-bg.png"
+          alt=""
+          className="h-full w-full object-cover object-bottom lg:object-center"
         />
-      </video>
-
-      {/* Blue gradient overlay - bottom to top on mobile, left to right on desktop */}
-      <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-[#02132c] to-transparent lg:inset-y-0 lg:left-0 lg:w-2/3 lg:h-full lg:bg-gradient-to-r -z-10" />
+      </picture>
+      
   
       <div className="flex flex-col h-screen">
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Content  */}
         <div className="flex flex-col justify-center flex-1  min-h-0 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
@@ -124,9 +111,26 @@ export default function ComingSoonPage() {
         <img
           src="/coming-soon.svg"
           alt=""
-          className="w-full lg:mx-0 flex-shrink-0"
+          className="w-full lg:mx-0 shrink-0"
         />
       </div> 
     </div>
   );
 }
+
+
+{/* <video
+        muted
+        playsInline
+        loop
+        autoPlay
+        preload="auto"
+        className="absolute w-full h-full object-cover object-bottom lg:object-right lg:object-center -z-10"
+      >
+        <source src="/videos/coming-soon.mp4" type="video/mp4" media="(min-width: 1024px)" />
+        <source
+          src="/videos/mob-video.webm"
+          type="video/mp4"
+          media="(max-width: 1024px)"
+        />
+      </video> */}
