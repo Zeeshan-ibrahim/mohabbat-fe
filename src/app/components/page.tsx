@@ -42,7 +42,7 @@ export default function ComingSoonPage() {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-dvh lg:h-screen overflow-hidden">
       {/* Background Image */}
       <picture className="absolute inset-0 -z-10 block h-full w-full">
         <source srcSet="/web-bg.png" media="(min-width: 800px)" />
@@ -54,14 +54,14 @@ export default function ComingSoonPage() {
       </picture>
       
   
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-dvh lg:h-screen">
         {/* <Navbar /> */}
 
         {/* Content  */}
         <div className="flex flex-col justify-center flex-1  min-h-0 text-white px-6 gap-4 lg:items-start lg:text-left lg:px-0 lg:ml-20 lg:mt-20">
           <img src="/Logo.svg" alt="Logo" className="w-28" />
 
-          <h1 className="text-2xl font-libre italic leading-snug lg:text-5xl">
+          <h1 className="lg:text-6xl text-2xl font-libre italic ">
             Dresses Shaped By
             <br />
             Forgotten Stories.
@@ -99,7 +99,7 @@ export default function ComingSoonPage() {
                 <button
                   type="submit"
                   disabled={isPending || !email}
-                  className="absolute right-0 bottom-0 px-4 py-2 border border-white text-white text-sm tracking-widest hover:bg-white hover:text-black transition lg:py-3 lg:text-sm disabled:cursor-not-allowed"
+                  className="absolute right-0 bottom-0 px-4 py-2 border border-white bg-white/20 text-white text-sm tracking-widest hover:bg-white hover:text-black transition lg:py-3 lg:text-sm disabled:cursor-not-allowed"
                 >
                   {isPending ? "SENDING..." : "SEND"}
                 </button>
@@ -111,7 +111,7 @@ export default function ComingSoonPage() {
         <img
           src="/coming-soon.svg"
           alt=""
-          className="w-full lg:mx-0 shrink-0"
+          className="w-full lg:mx-0 lg:shrink-0"
         />
       </div> 
     </div>
